@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanban Board</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <h1>Kanban Board</h1>
+  
+  <div class="container">
+    <div class="column" id="todo" ondrop="drop(event, 'todo')" ondragover="allowDrop(event)">
+      <h2>To Do</h2>
+      <div class="add-card" onclick="openCardForm('todo')">+ Add a card</div>
+      <div class="cards" id="todo-cards"></div>
+    </div>
+    <div class="column" id="inProgress" ondrop="drop(event, 'inProgress')" ondragover="allowDrop(event)">
+      <h2>In Progress</h2>
+      <div class="add-card" onclick="openCardForm('inProgress')">+ Add a card</div>
+      <div class="cards" id="inProgress-cards"></div>
+    </div>
+    <div class="column" id="done" ondrop="drop(event, 'done')" ondragover="allowDrop(event)">
+      <h2>Done</h2>
+      <div class="add-card" onclick="openCardForm('done')">+ Add a card</div>
+      <div class="cards" id="done-cards"></div>
+    </div>
+  </div>
+
+  <!-- Modal for Card Form -->
+  <div class="modal" id="cardModal">
+    <div class="modal-content">
+      <h3>Add/Edit Card</h3>
+      <input type="text" id="cardTitle" placeholder="Card Title" />
+      <label for="cardLabel">Priority:</label>
+      <select id="cardLabel">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button onclick="saveCard()">Save</button>
+      <button onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player</title>
+    <link rel="stylesheet" href="./index.css">
+    
+</head>
+<body>
+    <div class="video-container">
+        <video class="video-player" width="400" height="225">
+            <source src="./video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="controls">
+            <button class="play-pause">▶</button>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="volume-container">
+                <button class="volume-btn">🔊</button>
+                <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1">
+            </div>
+            <select class="speed-select">
+                <option value="1">1×</option>
+                <option value="1.5">1.5×</option>
+                <option value="2">2×</option>
+            </select>
+            <button class="fullscreen">⤢</button>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>

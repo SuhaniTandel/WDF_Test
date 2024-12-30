@@ -1,0 +1,90 @@
+.video-container {
+    max-width: 400px;
+    margin: 20px auto;
+    position: relative;
+    background: #000;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.video-player {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.video-container:hover .controls {
+    opacity: 1;
+}
+
+.play-pause, .fullscreen, .volume-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 2px 4px;
+    font-size: 12px;
+    min-width: 24px;
+}
+
+.progress-container {
+    flex-grow: 1;
+    height: 3px;
+    background: #444;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 0 5px;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: #fff;
+    border-radius: 3px;
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    min-width: 60px;
+}
+
+.volume-slider {
+    width: 50px;
+    height: 3px;
+    cursor: pointer;
+}
+
+.speed-select {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 2px;
+    font-size: 12px;
+    cursor: pointer;
+    width: 45px;
+}
+
+.speed-select option {
+    background: #333;
+    color: white;
+}
+
+video::-webkit-media-controls {
+    display: none !important;
+}
